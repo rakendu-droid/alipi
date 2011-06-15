@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://a11ypi/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://a11ypi/locale/overlay.dtd">
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<script src="overlay.js" type="application/javascript"/>
+
+ <richlistbox id="context-commands">
+   <richlistitem id="showtitle-context-command"
+                 class="context-command"
+		 type="image"
+		 onclick="alert('Hello');">
+     <label value="Show Title"/>
+   </richlistitem>
+ </richlistbox>
+
+
+<notificationbox id="navbox" >
+  <notification id="note" label="This is a Notification"/>
+</notificationbox> 
+</overlay>

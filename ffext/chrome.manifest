@@ -3,6 +3,6 @@ skin      a11ypi   classic/1.0   chrome/skin/
 locale    a11ypi   en-US         chrome/locale/en-US/
 
 
-overlay   chrome://browser/content/browser.xul   chrome://a11ypi/content/ff-overlay.xul
+overlay   chrome://browser/content/browser.xul   chrome://a11ypi/content/overlay.xul
 
 style chrome://global/content/customizeToolbar.xul chrome://a11ypi/skin/overlay.css

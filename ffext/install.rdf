@@ -5,11 +5,11 @@
     <em:type>2</em:type>
     <em:name>a11ypi</em:name>
     <em:version>1.0</em:version>
-    <em:creator>Arvind</em:creator>
+    <em:creator>Rakendu</em:creator>
     <em:optionsURL>chrome://a11ypi/content/options.xul</em:optionsURL>
     <em:targetApplication>
       <Description>
-        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
+        <em:id>{a23983c0-fd0e-11dc-95ff-0800200c9a66}</em:id> <!-- Fennec -->
         <em:minVersion>3.5</em:minVersion>
         <em:maxVersion>4.0.*</em:maxVersion>
       </Description>
