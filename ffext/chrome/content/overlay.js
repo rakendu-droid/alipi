@@ -1,10 +1,24 @@
 var notebox ={
     start:function()
     {
-	//gBrowser.getNotificationBox();
+	try{
+	    var nBox = Browser.getNotificationBox();
+	    alert("Success");
+	}
+	catch(e)
+	    {
+		alert(e.title);
+	    }
+	
+	var buttons = [{
+        label: 'Button',
+        accessKey: 'B',
+        popup: 'blockedPopupOptions',
+        callback: null
+    }];
+
 	alert('Hello world');
-	document.getElementById('navbox').appendNotification("Hello world","5");
+	//nBox.appendNotification("Hello world","popup-blocked","chrome://a11ypi/skin/a1icon.png",nBox.PRIORITY_INFO_HIGH,buttons);
     },
 };
-alert('Hello');
-window.addEventListener("load", notebox.start, true);
+window.addEventListener("UIReady",function(){notebox.start();}, true);
