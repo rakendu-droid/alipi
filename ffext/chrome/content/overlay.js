@@ -1,24 +1,18 @@
-var notebox ={
-    start:function()
+(function(){
+    addEventListener("UIReady", init, false);
+    function init(event)
     {
-	try{
-	    var nBox = Browser.getNotificationBox();
-	    alert("Success");
-	}
-	catch(e)
-	    {
-		alert(e.title);
-	    }
-	
-	var buttons = [{
-        label: 'Button',
-        accessKey: 'B',
-        popup: 'blockedPopupOptions',
-        callback: null
-    }];
-
-	alert('Hello world');
-	//nBox.appendNotification("Hello world","popup-blocked","chrome://a11ypi/skin/a1icon.png",nBox.PRIORITY_INFO_HIGH,buttons);
-    },
-};
-window.addEventListener("UIReady",function(){notebox.start();}, true);
+	 const id = "renarate-here";
+	 let element = document.getElementById(id);
+	 document.getElementById(id).addEventListener("click", onClick, false);
+	 PageActions.register(id, function(element)
+			      {
+				  return true;
+			      }
+			      );
+    }
+    function onClick(e)
+    {
+	alert(e.type);
+    }
+})()
