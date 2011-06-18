@@ -1,30 +1,26 @@
 /* This is just an example.  You shouldn't do this. */
-#a11ypi-hello
+.alipi-arrowbox
 {
-  color: red ! important;
+    padding: 10px 2px 10px 2px;
+    margin: 150px 0px 0px 0px;
+    height: 5px;
+    /* width: 130px; */
+    float:left;
 }
-#a11ypi-toolbar-button
+#right
 {
-  list-style-image: url("chrome://a11ypi/skin/a1icon.png"); 
-  -moz-image-region: rect(0px 20px 24px 0px); 
+    padding: 10px 0px 0px 0px;
+    margin: 1px 0px 0px 2px;
+    height: 5px;
+    width: 0px;
+    float:right;
 }
-#a11ypi-toolbar-button:hover
+
+#left
 {
-  -moz-image-region: rect(0px 20px 24px  0px);
+    padding: 0px 0px 10px 0px;
+    margin: 1px 2px 0px 0px;
+    height: 10px;
+    /* width: 0px; */
+    float:left;
 }
-[iconsize="small"] #a11ypi-toolbar-button
-{
-  -moz-image-region: rect(0px 20px 24px 0px);
-}
-[iconsize="small"] #a11ypi-toolbar-button:hover
-{
-  -moz-image-region: rect(0px 20px 24px 0px);
-}
-#a11ypi-browse,#re-narrate-button
-{
-margin-right: 300px;
-}
-/* #server-1,#server-2 */
-/* { */
-/* padding-left: 20px; */
-/* } */

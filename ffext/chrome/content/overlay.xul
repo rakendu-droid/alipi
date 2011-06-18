@@ -2,11 +2,23 @@
 <?xml-stylesheet href="chrome://a11ypi/skin/overlay.css" type="text/css"?>
 <!DOCTYPE overlay SYSTEM "chrome://a11ypi/locale/overlay.dtd">
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-<script src="overlay.js" type="application/javascript"/>
-<hbox id="pageactions-container">
-  <pageaction id="renarate-here" title="Alipi"/>
-</hbox>
- <!-- <richlistbox id="context-commands"> -->
+  <script src="overlay.js" type="application/javascript"/>
+  <hbox id="pageactions-container">
+    <pageaction id="renarate-here" title="Alipi"/>
+  </hbox>
+  <stack flex="1" id="stack">
+      <arrowbox id="alipi-popup" class="alipi-arrowbox" hidden="true" align="center" start="0"  >
+	<vbox>
+	  <button id="left" flex="1" label="^"/>
+	  
+	</vbox>
+	<label id="lab"/>
+	<vbox>
+	  <button id="right" flex="1" label="V"/>
+	</vbox>
+      </arrowbox>
+  </stack>
+  <!-- <richlistbox id="context-commands"> -->
  <!--   <richlistitem id="showtitle-context-command" -->
  <!--                 class="context-command" -->
  <!-- 		 type="image" -->
