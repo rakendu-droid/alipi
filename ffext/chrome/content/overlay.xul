@@ -4,17 +4,17 @@
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <script src="overlay.js" type="application/javascript"/>
   <hbox id="pageactions-container">
-    <pageaction id="renarate-here" title="Alipi"/>
+    <pageaction id="alipi" title="Alipi"/>
   </hbox>
   <stack flex="1" id="stack">
       <arrowbox id="alipi-popup" class="alipi-arrowbox" hidden="true" align="center" start="0"  >
 	<vbox>
-	  <button id="left" flex="1" label="^"/>
+	  <button id="up" flex="1"/>
 	  
 	</vbox>
 	<label id="lab"/>
 	<vbox>
-	  <button id="right" flex="1" label="V"/>
+	  <button id="down" flex="1"/>
 	</vbox>
       </arrowbox>
   </stack>

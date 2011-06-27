@@ -1,26 +1,33 @@
 /* This is just an example.  You shouldn't do this. */
 .alipi-arrowbox
 {
-    padding: 10px 2px 10px 2px;
+    padding: 0px 0px 0px 0px;
     margin: 150px 0px 0px 0px;
-    height: 5px;
+    height: 10px;
     /* width: 130px; */
     float:left;
 }
-#right
+#down
 {
     padding: 10px 0px 0px 0px;
-    margin: 1px 0px 0px 2px;
+    margin: 0px 0px 0px 0px;
     height: 5px;
     width: 0px;
     float:right;
+    background-image:url('down.png');
 }
 
-#left
+#up
 {
     padding: 0px 0px 10px 0px;
-    margin: 1px 2px 0px 0px;
-    height: 10px;
+    margin: 0px 0px 0px 0px;
+    height: 5px;
     /* width: 0px; */
     float:left;
+    background-image:url('up.png');
+}
+
+#lab
+{
+    margin: 10px 0px 10px 0px;
 }

@@ -3,9 +3,25 @@
     var i=0;
     addEventListener("UIReady", init, false);
     addEventListener("URLChanged",closepop,false);
+    addEventListener("load",onWindowLoad,false);
+    function onWindowLoad(e)
+    {
+       
+	messageManager.addMessageListener("MyCode:TitleChanged", titleChanged);
+	messageManager.loadFrameScript("chrome://a11ypi/content/content.js", true);
+    }
+    function titleChanged(message)
+    {
+
+	       	alert("Audio Narrations present");
+		//	let aud= message.json.title;
+		//	alert(aud);
+    }
+
     function init(event)
     {
-	const id = "renarate-here";
+	
+	const id = "alipi";
 	let element = document.getElementById(id);
 	document.getElementById(id).addEventListener("click", alipiClicked, false);
 	PageActions.register(id, function(element)
@@ -13,6 +29,7 @@
 				 return true;
 			     }
 			     );
+
     }
     function alipiClicked()
     {
@@ -42,37 +59,18 @@
 
     function createArrowBox(mlist){
 	rlist= mlist;
-	
 	let ppup = document.getElementById('alipi-popup');
-	let rbtn = document.getElementById('right');
-	rbtn.addEventListener("click",rightClicked,false);
-	let lbtn = document.getElementById('left');
-	let lbl =document.getElementById('lab');
+	let dbtn = document.getElementById('down');
+	dbtn.addEventListener("click",downClicked,false);
+	let ubtn = document.getElementById('up');
+	let lbl = document.getElementById('lab');
 	ppup.addEventListener("click",arrowboxClicked,false);
-
-	lbtn.addEventListener("click",leftClicked,false);
+	ubtn.addEventListener("click",upClicked,false);
         ppup.hidden = false;
-	BrowserUI.pushPopup(pHide,[ppup,rbtn,lbtn]);
+	BrowserUI.pushPopup(pHide,[ppup,dbtn,ubtn]);
 	lbl.value = rlist[0];
-       
-
-
     }
-    function rightClicked(e)
-    {
-
-	let lbl =document.getElementById('lab');
-	lbl.value="hello";
-	e.preventDefault();	
-	// if(i<rlist.length)
-	// 	    {
-		
-	// 		i++;
-	// 		lbl.value=rlist[i];
-	// 	    }
-
-    }
-    function leftClicked(e)
+    function upClicked(e)
     {
 	let lbl = document.getElementById('lab');
 	
@@ -83,19 +81,32 @@
 	    }
     }    
 
+    function downClicked(e)
+    {
+
+	let lbl =document.getElementById('lab');
+	//	lbl.value="hello";
+	e.preventDefault();	
+	if(i<(rlist.length-1))
+	 	    {
+		
+	 		i++;
+	 		lbl.value=rlist[i];
+	 	    }
+
+    }
+    
     function arrowboxClicked(e)
     {
-	if(e.target.id == 'left')
+	if(e.target.id == 'up')
 	    {
-		//	alert('Hello');
 		e.preventDefault();
 	    }
-	else if(e.target.id == 'right')
+	else if(e.target.id == 'down')
 	    {
-		//	alert('Hello');
-		e.preventDefault();
+      		e.preventDefault();
 	    }
-	else
+	else if(e.target.id == 'lab')
 	    {
 
 		let ppup = document.getElementById('alipi-popup');
@@ -108,9 +119,15 @@
 
     function closepop()
     {
-	let ppup = document.getElementById('alipi-popup');
-	ppup.hidden= true;
+	//	alert("url changed");
+	// addEventListener("load",onWindowLoad,false);
+	 let ppup = document.getElementById('alipi-popup');
+	 	ppup.hidden= true;
+
+	
     }
+    
+ 
     var pHide =
 	{
 	    hide: function()

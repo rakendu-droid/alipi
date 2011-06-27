@@ -1,0 +1,31 @@
+//This is for child proces
+// function domTitleChanged(aMessage) {
+//   // Send the title to the main application process
+//   let title = content.document.title;
+//   alert("child"+e);
+//   sendAsyncMessage("MyCode:TitleChanged", { title: title });
+// }
+// alert("Hello child");
+// addMessageListener("DOMTitleChanged", domTitleChanged, false);
+
+
+
+function domTitleChanged(aMessage) {
+  // Send the title to the main application process
+  let title = content.document.title;
+  let aud = content.document.getElementsByTagName("audio");
+  let title = content.document.title;
+
+  if(aud.length > 0)
+      {
+	
+	  // sendAsyncMessage("MyCode:TitleChanged", {title:title });
+	
+	  eid= aud[0].id;
+	  let aele = content.document.getElementById(eid);
+	  aele.style.border= "medium outset red";
+	  
+	  sendAsyncMessage("MyCode:TitleChanged", { title: title });
+      }
+}
+addEventListener("DOMTitleChanged", domTitleChanged, false);
