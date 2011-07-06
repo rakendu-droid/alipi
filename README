@@ -7,3 +7,12 @@ For users: alipi-users@googlegroups.com
 
 **NOTES**  
 The extension can be found at Downloads tab.
+
+**Known Issues**
+    
+    Lack of support for indic fonts is the issue currently found. There are fonts that are present for few indic fonts. 
+    Hindi is supported by Samsung and few other manufacturers. The fonts can be installed provided the android phone is rooted. 
+    the following link shows us how to do it. http://www.gadgetsdna.com/custom-fonts-installation-on-rooted-android-device/696/. 
+    An issue has been raised and the following are examples. http://code.google.com/p/android/issues/detail?id=9248 
+    http://code.google.com/p/android/issues/detail?id=3029. 
+
