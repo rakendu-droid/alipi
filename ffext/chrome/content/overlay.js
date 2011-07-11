@@ -1,22 +1,61 @@
 (function(){
     var rlist;
     var i=0;
+
     addEventListener("UIReady", init, false);
     addEventListener("URLChanged",closepop,false);
     addEventListener("load",onWindowLoad,false);
+    addEventListener("pageshow",page,false);
+   
+    function page(e)
+    {
+	//	alert("page");
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange = function() 
+	    {  
+		if(xhr.readyState == 4)
+		    {
+			if(xhr.responseText == "None")
+			    {
+				//alert("No Renarrations present");
+			    }
+			else
+			    {
+				var message = "Re-narration Available";
+			       	var notificationBox = Browser.getNotificationBox();
+				// 	var notification = notificationBox.getNotificationWithValue("Hello");
+				if(notification)
+				    {
+					notification.label = message;
+				    }
+				else
+				    {
+					 const priority = notificationBox.PRIORITY_WARNING_MEDIUM;
+					  notificationBox.appendNotification(message, "Hello", "", priority);
+				    }
+			    }
+		    }
+	    }
+	
+	xhr.open("POST","http://devel.virtual-labs.ac.in/alipi/menu",true);
+    	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xhr.send(String(getBrowser().currentURI.spec));	
+    }
     function onWindowLoad(e)
     {
-       
+	//alert("page loaded");
 	messageManager.addMessageListener("MyCode:TitleChanged", titleChanged);
+	messageManager.addMessageListener("MyCode:page",page);
 	messageManager.loadFrameScript("chrome://a11ypi/content/content.js", true);
     }
     function titleChanged(message)
     {
-
-	       	alert("Audio Narrations present");
+      	alert("Audio Narrations present");
 		//	let aud= message.json.title;
 		//	alert(aud);
     }
+
+
 
     function init(event)
     {
@@ -45,17 +84,20 @@
 			    }
 			else
 			    {
-			 
+				
+				//	notification.label = message;
+				//	alert("clciked");
 				createArrowBox(JSON.parse(xhr.responseText));
 			    }
 		    }
 	    }
 	
 	xhr.open("POST","http://devel.virtual-labs.ac.in/alipi/menu",true);
-
     	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	xhr.send(String(getBrowser().currentURI.spec));
     }
+
+
 
     function createArrowBox(mlist){
 	rlist= mlist;
@@ -70,6 +112,8 @@
 	BrowserUI.pushPopup(pHide,[ppup,dbtn,ubtn]);
 	lbl.value = rlist[0];
     }
+
+
     function upClicked(e)
     {
 	let lbl = document.getElementById('lab');
@@ -79,7 +123,9 @@
 		i--;
 		lbl.value=rlist[i];
 	    }
-    }    
+    }  
+
+  
 
     function downClicked(e)
     {
@@ -95,6 +141,8 @@
 	 	    }
 
     }
+
+
     
     function arrowboxClicked(e)
     {
@@ -117,15 +165,60 @@
 	    }
     }
 
+    
+
+
     function closepop()
     {
+
 	//	alert("url changed");
 	// addEventListener("load",onWindowLoad,false);
 	 let ppup = document.getElementById('alipi-popup');
-	 	ppup.hidden= true;
+        	ppup.hidden= true;
+
+       	// var xhr=new XMLHttpRequest();
+	// xhr.onreadystatechange = function() 
+	//     {  
+	// 	if(xhr.readyState == 4)
+	// 	    {
+	// 		if(xhr.responseText == "None")
+	// 		    {
+	// 			//alert("No Renarrations present");
+	// 		    }
+	// 		else
+	// 		    {
+	// 			var message = "Re-Narrations Available";
+	// 		       	var notificationBox = Browser.getNotificationBox();
+	// 		       	var notification = notificationBox.getNotificationWithValue("Re-Narrations Available");
+	// 			if(notification)
+	// 			    {
+	// 				notification.label = message;
+	// 			    }
+	// 			else
+	// 			    {
+	// 				 const priority = notificationBox.PRIORITY_WARNING_MEDIUM;
+	// 				  notificationBox.appendNotification(message, "Re-narrations Available", "", priority);
+	// 			    }
+	// 		    }
+	// 	    }
+	//     }
+	
+	// xhr.open("POST","http://devel.virtual-labs.ac.in/alipi/menu",true);
+    	// xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	// xhr.send(String(getBrowser().currentURI.spec));	
+	
 
 	
+	
     }
+
+     getNotificationBox: function getNotificationBox(aBrowser) 
+     {
+        let browser = aBrowser || this.selectedBrowser;
+        return browser.parentNode;
+     }
+
+
     
  
     var pHide =
