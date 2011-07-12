@@ -23,7 +23,7 @@
 			    {
 				var message = "Re-narration Available";
 			       	var notificationBox = Browser.getNotificationBox();
-				// 	var notification = notificationBox.getNotificationWithValue("Hello");
+			       	var notification = notificationBox.getNotificationWithValue("Hello");
 				if(notification)
 				    {
 					notification.label = message;

@@ -33,6 +33,7 @@ function domTitleChanged(aMessage)
 	    sendAsyncMessage("MyCode:TitleChanged", { title: url });
 	}
 }
+
 function contentLoaded(aMessage)
 {
     var url = "load"; 
