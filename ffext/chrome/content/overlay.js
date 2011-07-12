@@ -23,7 +23,7 @@
 			    {
 				var message = "Re-narration Available";
 			       	var notificationBox = Browser.getNotificationBox();
-			       	var notification = notificationBox.getNotificationWithValue("Hello");
+			       	var notification = notificationBox.getNotificationWithValue("Re-narration Available");
 				if(notification)
 				    {
 					notification.label = message;
@@ -31,7 +31,7 @@
 				else
 				    {
 					 const priority = notificationBox.PRIORITY_WARNING_MEDIUM;
-					  notificationBox.appendNotification(message, "Hello", "", priority);
+					  notificationBox.appendNotification(message, "Re-narration Available", "", priority);
 				    }
 			    }
 		    }
