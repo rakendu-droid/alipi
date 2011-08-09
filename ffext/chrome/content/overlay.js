@@ -1,5 +1,5 @@
 (function(){
-    var rlist;
+    var rlist,down;
     var i=0;
 
     addEventListener("UIReady", init, false);
@@ -103,21 +103,28 @@
 	rlist= mlist;
 	let ppup = document.getElementById('alipi-popup');
 	let dbtn = document.getElementById('down');
-	dbtn.addEventListener("click",downClicked,false);
-	let ubtn = document.getElementById('up');
+
+       	let ubtn = document.getElementById('up');
 	let lbl = document.getElementById('lab');
+       
+	dbtn.addEventListener("click",downClicked,false);
 	ppup.addEventListener("click",arrowboxClicked,false);
-	ubtn.addEventListener("click",upClicked,false);
-        ppup.hidden = false;
+       	ubtn.addEventListener("click",upClicked,false);
+	ppup.hidden = false;
+	ubtn.disabled = true;
 	BrowserUI.pushPopup(pHide,[ppup,dbtn,ubtn]);
+	//dbtn.disabled = di;
+	//ubtn.hidden = true;
+       	//alert(dbtn.disabled);
 	lbl.value = rlist[0];
     }
-
 
     function upClicked(e)
     {
 	let lbl = document.getElementById('lab');
 	
+	//alert("up clicked");
+
 	if(i>0)
 	    {
 		i--;
@@ -135,11 +142,9 @@
 	e.preventDefault();	
 	if(i<(rlist.length-1))
 	 	    {
-		
 	 		i++;
 	 		lbl.value=rlist[i];
 	 	    }
-
     }
 
 
@@ -156,7 +161,6 @@
 	    }
 	else if(e.target.id == 'lab')
 	    {
-
 		let ppup = document.getElementById('alipi-popup');
 		ppup.removeEventListener("click",arrowboxClicked,false);
 		ppup.hidden= true;

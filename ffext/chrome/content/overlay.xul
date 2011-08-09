@@ -7,26 +7,26 @@
     <pageaction id="alipi" title="Alipi"/>
   </hbox>
   <stack flex="1" id="stack">
-      <arrowbox id="alipi-popup" class="alipi-arrowbox" hidden="true" align="center" start="0"  >
-	<vbox>
-	  <button id="up" flex="1"/>
-	  
-	</vbox>
-	<label id="lab"/>
-	<vbox>
-	  <button id="down" flex="1"/>
-	</vbox>
-      </arrowbox>
+    <arrowbox id="alipi-popup" class="alipi-arrowbox" hidden="true" align="center" start="0"  >
+      <hbox>
+	<button type="button" id="up" flex="1" >
+</button>	
+     
+      <label id="lab"/>
+     
+	<button id="down" flex="1"/>
+      </hbox>
+    </arrowbox>
   </stack>
   <!-- <richlistbox id="context-commands"> -->
- <!--   <richlistitem id="showtitle-context-command" -->
- <!--                 class="context-command" -->
- <!-- 		 type="image" -->
- <!-- 		 onclick="notebox.renarate();"> -->
- <!--     <label value="Alipi Renaration "/> -->
- <!--   </richlistitem> -->
- <!-- </richlistbox> -->
- <!-- <notificationbox flex="1">  -->
- <!--   <browser src="http://www.mozilla.org"/> -->
- <!-- </notificationbox>   -->
+  <!--   <richlistitem id="showtitle-context-command" -->
+	 <!--                 class="context-command" -->
+	 <!-- 		 type="image" -->
+	 <!-- 		 onclick="notebox.renarate();"> -->
+	 <!--     <label value="Alipi Renaration "/> -->
+	 <!--   </richlistitem> -->
+	 <!-- </richlistbox> -->
+	 <!-- <notificationbox flex="1">  -->
+	 <!--   <browser src="http://www.mozilla.org"/> -->
+	 <!-- </notificationbox>   -->
 </overlay>

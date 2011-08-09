@@ -4,30 +4,30 @@
     padding: 0px 0px 0px 0px;
     margin: 150px 0px 0px 0px;
     height: 10px;
-    /* width: 130px; */
+     width: 330px; 
     float:left;
 }
 #down
 {
-    padding: 10px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+    padding: 0px 10px 0px 0px;
+    margin: 0px 10px 0px 0px;
     height: 5px;
     width: 0px;
     float:right;
-    background-image:url('down.png');
+    background-image:url('right.png');
 }
 
 #up
 {
-    padding: 0px 0px 10px 0px;
-    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 10px;
+    margin: 0px 0px 0px 10px;
     height: 5px;
     /* width: 0px; */
     float:left;
-    background-image:url('up.png');
+    background-image:url('left.png');
 }
 
 #lab
 {
-    margin: 10px 0px 10px 0px;
+    margin: 15px 10px 0px 10px;
 }
